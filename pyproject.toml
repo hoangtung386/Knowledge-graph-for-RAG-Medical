@@ -1,0 +1,30 @@
+[project]
+name = "pji-rag"
+version = "0.1.0"
+description = "RAG-based Clinical Decision Support System for PJI Diagnosis"
+requires-python = ">=3.10"
+dependencies = [
+    "lightrag-hku",
+    "openai",
+    "fastapi",
+    "uvicorn[standard]",
+    "textract-py3",
+    "pymupdf",
+    "python-dotenv",
+    "pydantic>=2.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-asyncio",
+    "httpx",
+]
+
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
